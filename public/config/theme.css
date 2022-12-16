@@ -1,8 +1,14 @@
 :root {
-  --primary: #ebc908;
-  --primary-text: #1a1a1a;
-  --secondary: #ff1dec;
+  --primary: #a01503;
+  --primary-text: #ff9100;
+  --secondary: #ff1d1d;
   --secondary-text: #ffffff;
-  --accent: #505050;
+  --accent: #161515;
   --accent-text: #ffffff;
+  
+}
+
+.opaque-background {
+  opacity: 10000;
+
 }

@@ -7,8 +7,8 @@
     "ID": 5
   },
   "NFT_NAME": "Mask of Nusantara",
-  "SYMBOL": "MON",
-  "MAX_SUPPLY": 777,
+  "SYMBOL": "Mask Of Nusantara",
+  "MAX_SUPPLY": 666,
   "WEI_COST": 500000000000000,
   "DISPLAY_COST": 0.0005,
   "GAS_LIMIT": 285000,
