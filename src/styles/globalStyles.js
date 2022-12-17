@@ -50,6 +50,22 @@ export const Container = styled.div`
   background-position: center;
 `;
 
+export const SmallContainer = styled.div`
+  display: flex;
+  flex: 0;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  background-color: ${({ test }) => (test ? "pink" : "none")};
+  /* Set the width and height of the container */
+  width: 200px;
+  height: 100px;
+  background-image: ${({ image }) => (image ? `url(${image})` : "none")};
+  background-size: cover;
+  background-position: center;
+`;
+
+
 export const TextTitle = styled.p`
   color: var(--primary-text);
   font-size: 22px;

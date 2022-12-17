@@ -5,6 +5,7 @@ import { fetchData } from "./redux/data/dataActions";
 import * as s from "./styles/globalStyles";
 import styled from "styled-components";
 
+
 const truncate = (input, len) =>
   input.length > len ? `${input.substring(0, len)}...` : input;
 
@@ -12,19 +13,17 @@ const truncate = (input, len) =>
   padding: 30px;
   /* Remove the border-radius style */
   border: none;
-  background-color: var(--primary-text);
+  background-color: var(--accent);
   padding: 10px;
   font-weight: bold;
   color: var(--secondary-text);
   width: 100px;
   cursor: pointer;
-  box-shadow: 0px 6px 0px -2px rgba(250, 250, 250, 0.3);
-  -webkit-box-shadow: 0px 6px 0px -2px rgba(250, 250, 250, 0.3);
-  -moz-box-shadow: 0px 6px 0px -2px rgba(250, 250, 250, 0.3);
-  :active {
-    box-shadow: none;
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
+ 
+  }
+  :hover {
+    background-color: white;
+    color: black;
   }
 `;
 
@@ -99,12 +98,13 @@ export const StyledLink = styled.a`
   text-decoration: none;
 `;
 
+
 function App() {
   const dispatch = useDispatch();
   const blockchain = useSelector((state) => state.blockchain);
   const data = useSelector((state) => state.data);
   const [claimingNft, setClaimingNft] = useState(false);
-  const [feedback, setFeedback] = useState(`Click to join us`);
+  const [feedback, setFeedback] = useState(`One step at a time...`);
   const [mintAmount, setMintAmount] = useState(1);
   const [CONFIG, SET_CONFIG] = useState({
     CONTRACT_ADDRESS: "",
@@ -167,8 +167,8 @@ function App() {
 
   const incrementMintAmount = () => {
     let newMintAmount = mintAmount + 1;
-    if (newMintAmount > 30) {
-      newMintAmount = 30;
+    if (newMintAmount > 3) {
+      newMintAmount = 3;
     }
     setMintAmount(newMintAmount);
   };
@@ -216,7 +216,7 @@ function App() {
             jc={"center"}
             ai={"center"}
             style={{
-              backgroundColor: "var(--accent)",
+              backgroundColor: "rgba(0, 0, 0, 0.5)",
               padding: 1,
               borderRadius: 24,
               boxShadow: "0px 5px 11px 2px rgba(0,0,0,0.7)",
@@ -239,14 +239,9 @@ function App() {
                 color: "var(--primary-text)",
               }}
             >
-              <s.TextDescription
-                  style={{ textAlign: "center", color: "var(--accent-text)" }}
-                >
-                  The smart contract is: <StyledLink target={"_blank"} href={CONFIG.SCAN_LINK}>
-                {truncate(CONFIG.CONTRACT_ADDRESS, 15)}
-              </StyledLink>
-                </s.TextDescription>
-              
+              <s.SpacerLarge />
+                  <s.SpacerLarge />
+                  
             </s.TextDescription>
             <s.SpacerSmall />
             {Number(data.totalSupply) >= CONFIG.MAX_SUPPLY ? (
@@ -272,13 +267,13 @@ function App() {
                   style={{ textAlign: "center", color: "var(--accent-text)" }}
                 >
                   {CONFIG.DISPLAY_COST}{" "}
-                  {CONFIG.NETWORK.SYMBOL}.
+                  {CONFIG.NETWORK.SYMBOL} / Max 3 per wallet
                 </s.TextTitle>
                 <s.SpacerXSmall />
                 <s.TextDescription
                   style={{ textAlign: "center", color: "var(--accent-text)" }}
                 >
-                  Excluding gas fees.
+                  (Excluding gas fees)
                 </s.TextDescription>
                 <s.SpacerSmall />
                 {blockchain.account === "" ||
@@ -293,6 +288,7 @@ function App() {
                       Connect to the {CONFIG.NETWORK.NAME} network
                     </s.TextDescription>
                     <s.SpacerSmall />
+                    
                     <StyledButton
                       onClick={(e) => {
                         e.preventDefault();
@@ -318,6 +314,7 @@ function App() {
                   </s.Container>
                 ) : (
                   <>
+                  
                     <s.TextDescription
                       style={{
                         textAlign: "center",
@@ -368,14 +365,30 @@ function App() {
                           getData();
                         }}
                       >
-                        {claimingNft ? "BUSY" : "BUY"}
+                        {claimingNft ? "BUSY" : "MINT"}
                       </StyledButton>
                     </s.Container>
                   </>
+                  
                 )}
+                
+                
+
               </>
             )}
-            <s.SpacerMedium />
+                  <s.SpacerLarge />
+                  <s.SpacerLarge />
+                  <s.SpacerLarge />
+                  <s.SpacerLarge />
+                  <s.SpacerLarge />
+                    <s.TextDescription
+                  style={{ textAlign: "center", color: "var(--accent-text)" }}
+                >
+                  The smart contract is: <StyledLink target={"_blank"} href={CONFIG.SCAN_LINK}>
+                {truncate(CONFIG.CONTRACT_ADDRESS, 15)} 
+              </StyledLink>
+                </s.TextDescription>
+
           </s.Container>
           <s.SpacerLarge />
           <s.Container flex={1} jc={"center"} ai={"center"}>
