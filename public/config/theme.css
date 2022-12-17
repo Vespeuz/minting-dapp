@@ -5,10 +5,7 @@
   --secondary-text: #ffffff;
   --accent: #161515;
   --accent-text: #ffffff;
+  --link: #ae00ff;
   
 }
 
-.opaque-background {
-  opacity: 10000;
-
-}

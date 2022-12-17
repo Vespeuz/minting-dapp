@@ -132,6 +132,10 @@ export const StyledLink = styled.a`
   text-decoration: none;
 `;
 
+export const StyledLinktwo = styled.a`
+  color: var(--link);
+  text-decoration: none;
+`;
 
 function App() {
   const dispatch = useDispatch();
@@ -418,12 +422,33 @@ function App() {
                   <s.SpacerLarge />
                   <s.SpacerLarge />
                   <s.SpacerLarge />
+
+                  <s.socialDiv>
+
+            <a href={CONFIG.Twitter} target={"_blank"}>
+          <s.Icons src="/config/images/twitter.svg" alt="twitter" />
+          </a>
+          <a href={CONFIG.Medium} target={"_blank"}>
+          <s.Icons src="/config/images/medium.svg" alt="medium" />
+          </a>
+          <a href={CONFIG.MARKETPLACE_LINK} target={"_blank"}>
+          <s.Icons src="/config/images/opensea.svg" alt="opensea" />
+          </a>
+          </s.socialDiv>
+          <s.SpacerLarge />
                     <s.TextDescription
                   style={{ textAlign: "center", color: "var(--accent-text)" }}
                 >
                   The smart contract is: <StyledLink target={"_blank"} href={CONFIG.SCAN_LINK}>
                 {truncate(CONFIG.CONTRACT_ADDRESS, 15)} 
               </StyledLink>
+                </s.TextDescription>
+                        
+                <s.TextDescription
+                style={{ textAlign: "center", color: "var(--accent-text)" }}>
+                  Back to the <StyledLinktwo href="https://www.maskofnusantara.xyz/">
+                website
+              </StyledLinktwo>
                 </s.TextDescription>
 
           </s.Container>

@@ -12,6 +12,32 @@ export const Screen = styled.div`
   flex-direction: column;
 `;
 
+export const Icons = styled.img`
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    margin-right: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    :hover {
+      transform: scale(1.2);
+      transition: transform 0.3s;
+    }
+`;
+
+
+export const socialDiv = styled.div`
+display: flex;
+align-items: center;
+@media (max-width: 565px) {
+  margin-right: 0;
+  margin-top: 20px;
+  flex-direction: row;
+}
+`;
+
 // Used for providing space between components
 export const SpacerXSmall = styled.div`
   height: 8px;

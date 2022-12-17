@@ -14,5 +14,8 @@
   "GAS_LIMIT": 285000,
   "MARKETPLACE": "Opensea",
   "MARKETPLACE_LINK": "https://testnets.opensea.io/collection/maskhehe",
+  "Medium": "https://medium.com/@maskofnusantara",
+  "Discord": "#",
+  "Twitter": "https://twitter.com/maskofnusantara",
   "SHOW_BACKGROUND": true
 }
