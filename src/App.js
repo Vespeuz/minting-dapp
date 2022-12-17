@@ -9,6 +9,40 @@ import styled from "styled-components";
 const truncate = (input, len) =>
   input.length > len ? `${input.substring(0, len)}...` : input;
 
+
+  export const CTNButton = styled.button`
+  font-family: 'coder';
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: none;
+  background-color: black;
+  padding: 10px;
+  letter-spacing: 2px;
+  font-weight: bold;
+  color: white;
+  width: 270px;
+  height: 50px;
+  cursor: pointer;
+  box-shadow: 0px 6px 0px -2px black;
+  -webkit-box-shadow: 0px 6px 0px -2px black;
+  -moz-box-shadow: 0px 6px 0px -2px black;
+  :active {
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+  }
+  :hover {
+    color: silver;
+  }
+  @media (max-width: 565px) {
+    width: 200px;
+    height: 50px;
+    font-size: 0.75rem;
+  }
+`;
+
+
   const StyledButton = styled.button`
   padding: 30px;
   /* Remove the border-radius style */
@@ -102,6 +136,7 @@ export const StyledLink = styled.a`
 function App() {
   const dispatch = useDispatch();
   const blockchain = useSelector((state) => state.blockchain);
+  const [walletAddress, setAddress] = useState("Not Connected");
   const data = useSelector((state) => state.data);
   const [claimingNft, setClaimingNft] = useState(false);
   const [feedback, setFeedback] = useState(`One step at a time...`);
@@ -211,6 +246,8 @@ function App() {
           <s.Container flex={1} jc={"center"} ai={"center"}>
             
           </s.Container>
+
+          
           <s.Container
             flex={2}
             jc={"center"}
@@ -289,22 +326,22 @@ function App() {
                     </s.TextDescription>
                     <s.SpacerSmall />
                     
-                    <StyledButton
+                    <CTNButton
                       onClick={(e) => {
                         e.preventDefault();
                         dispatch(connect());
                         getData();
                       }}
                     >
-                      CONNECT
-                    </StyledButton>
+                      CONNECT WALLET
+                    </CTNButton>
                     {blockchain.errorMsg !== "" ? (
                       <>
                         <s.SpacerSmall />
                         <s.TextDescription
                           style={{
                             textAlign: "center",
-                            color: "var(--accent)",
+                            color: "var(--accent-text)",
                           }}
                         >
                           {blockchain.errorMsg}
@@ -357,7 +394,7 @@ function App() {
                     </s.Container>
                     <s.SpacerSmall />
                     <s.Container ai={"center"} jc={"center"} fd={"row"}>
-                      <StyledButton
+                      <CTNButton
                         disabled={claimingNft ? 1 : 0}
                         onClick={(e) => {
                           e.preventDefault();
@@ -366,7 +403,7 @@ function App() {
                         }}
                       >
                         {claimingNft ? "BUSY" : "MINT"}
-                      </StyledButton>
+                      </CTNButton>
                     </s.Container>
                   </>
                   
