@@ -308,7 +308,7 @@ function App() {
                   style={{ textAlign: "center", color: "var(--accent-text)" }}
                 >
                   {CONFIG.DISPLAY_COST}{" "}
-                  {CONFIG.NETWORK.SYMBOL} / Max 3 per wallet
+                  {CONFIG.NETWORK.SYMBOL} / Max 5 per wallet
                 </s.TextTitle>
                 <s.SpacerXSmall />
                 <s.TextDescription

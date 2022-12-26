@@ -1,16 +1,16 @@
 {
-  "CONTRACT_ADDRESS": "0xE548B18C6D5f3E665961aDF3471df75763B803Ab",
-  "SCAN_LINK": "https://goerli.etherscan.io/token/0xe548b18c6d5f3e665961adf3471df75763b803ab",
+  "CONTRACT_ADDRESS": "0xE46C0143437a23251C8bdE32A32b3bb09AB0f863",
+  "SCAN_LINK": "https://etherscan.io/address/0xe46c0143437a23251c8bde32a32b3bb09ab0f863",
   "NETWORK": {
-    "NAME": "Goerli",
+    "NAME": "Ethereum mainnet",
     "SYMBOL": "ETH",
-    "ID": 5
+    "ID": 1
   },
   "NFT_NAME": "Mask of Nusantara",
   "SYMBOL": "Mask Of Nusantara",
   "MAX_SUPPLY": 666,
-  "WEI_COST": 500000000000000,
-  "DISPLAY_COST": 0.0005,
+  "WEI_COST": 3300000000000000,
+  "DISPLAY_COST": 0.0033,
   "GAS_LIMIT": 285000,
   "MARKETPLACE": "Opensea",
   "MARKETPLACE_LINK": "https://testnets.opensea.io/collection/maskhehe",
